@@ -5,6 +5,39 @@
     <title>Title</title>
 </head>
 <body>
+<input placeholder="tiền nhập" type="text" id="input">
+<select id="inn" onchange="doiTien()">
+    <option value="VNĐ">VNĐ</option>
+    <option value="USD">USD</option>
+    <option value="JPY">JPY</option>
+</select>
+<h1 id="dkp"> </h1>
+<button onclick="doiTien()">convert</button>
+<script>
+    function doiTien() {
+        let input = document.getElementById('input').value;
+        let inn = document.getElementById('inn').value;
+        let out = document.getElementById('out').value;
+        let ketQua
+        if (inn === out) {
+            document.getElementById('dkp').innerHTML = "<h3 style='color: yellow'>chọn mệnh giá khác nhau </h3>"
+            return
+        }
+    }
+    if (inn === "VNĐ") {
+        if (out === "USD"){ketQua= input/25000}
+        if (out === "JYP"){ketQua= input/192}
+    }
+    if (inn === "USD") {
+        if (out === "VNĐ") {ketQua = input * 0.000043}
+        if (out === "JYP") {ketQua = input / 138.61}
+    }
+    if (inn === "JYP") {
+        if (out === "VNĐ"){ketQua= input191*.82}
+        if (out === "JYP"){ketQua= input*0.0072}
+    }
+document.getElementById("dkp").innerHTML = ketQua+out
+</script>
 
 </body>
 </html>
