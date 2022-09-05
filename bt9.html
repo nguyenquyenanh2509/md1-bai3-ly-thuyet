@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = prompt("a=");
+    let b = prompt("b=");
+    let c = prompt("c=");
+    let delta = b*b -4*a*c;
+    if(delta<0){
+        alert("phuong trinh vo nghiem")
+    }else if(delta == 0){
+        alert("phuong trinh co nghium kep x="+-b/2*a);
+    }else if (delta>0){
+        let x1 = (-b+Math.sqrt)(delta)/2*a;
+        let x2 = (-b-Math.sqrt)(delta)/2*a;
+alert("phuong trinh co 2 nghiem x1=" +x1 +" va x2="+x2);
+    }
+</script>
+</body>
+</html>
